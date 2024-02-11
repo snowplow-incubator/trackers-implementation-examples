@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.snowplowanalytics.androidcomposedemo.R
-import com.snowplowanalytics.snowplow.payload.SelfDescribingJson
 
 @Composable
 fun SchemaDetailScreen(

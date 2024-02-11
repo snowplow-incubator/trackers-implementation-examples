@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "snowplow-objc-tracker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/snowplow/snowplow-objc-tracker",
+      "state" : {
+        "revision" : "e86d218bd88ec522f6bd120afbd1badcb8ec0f69",
+        "version" : "6.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
