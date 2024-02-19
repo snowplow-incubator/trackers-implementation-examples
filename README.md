@@ -14,8 +14,8 @@ Expected events:
 ### Running the demos
 **Android**
 1. Open Android Studio
-2. File > Open the `android_compose_demo` subfolder
-3. Set your collector URL in `android_compose_demo/app/src/main/java/com/snowplowanalytics/androidcomposedemo/data/Tracking.kt`
+2. File > Open the `Android_Compose_demo` subfolder
+3. Set your collector URL in `Android_Compose_demo/app/src/main/java/com/snowplowanalytics/androidcomposedemo/data/Tracking.kt`
 4. Run using the green triangle button at the top right(ish) of the window
 
 **iOS**
