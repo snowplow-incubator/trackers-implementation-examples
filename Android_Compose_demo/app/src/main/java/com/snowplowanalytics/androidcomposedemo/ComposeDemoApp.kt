@@ -27,7 +27,7 @@ fun ComposeDemoApp(
     
     // Initialises the Snowplow tracker and sets up screen view autotracking
     // A ScreenView event will be generated every time the navigation destination changes
-    Tracking.setup("compose_demo")
+    Tracking.setup()
     Tracking.AutoTrackScreenView(navController = navController)
     
     NavHost(

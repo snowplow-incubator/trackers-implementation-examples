@@ -5,7 +5,9 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
 import com.snowplowanalytics.snowplow.Snowplow
+import com.snowplowanalytics.snowplow.configuration.ConfigurationBundle
 import com.snowplowanalytics.snowplow.configuration.NetworkConfiguration
+import com.snowplowanalytics.snowplow.configuration.RemoteConfiguration
 import com.snowplowanalytics.snowplow.configuration.TrackerConfiguration
 import com.snowplowanalytics.snowplow.controller.TrackerController
 import com.snowplowanalytics.snowplow.event.ListItemView
@@ -15,12 +17,12 @@ import com.snowplowanalytics.snowplow.tracker.LogLevel
 
 object Tracking {
     @Composable
-    fun setup(namespace: String) : TrackerController {
+    fun setup(): TrackerController? {
         
         // Replace this collector endpoint with your own
-        // Use ngrok or your IP address, e.g. http://192.168.0.16:9090 for Micro
+        // For Micro, use ngrok or your IP address, e.g. http://192.168.0.16:9090
         // NB http://0.0.0.0:9090 won't work
-        val networkConfig = NetworkConfiguration("http://192.168.0.16:9090", HttpMethod.POST)
+        val networkConfig = NetworkConfiguration("http://192.168.0.10:9090", HttpMethod.POST)
         val trackerConfig = TrackerConfiguration("android-compose-demo")
             .logLevel(LogLevel.DEBUG)
             
@@ -29,10 +31,28 @@ object Tracking {
 
         return Snowplow.createTracker(
             LocalContext.current,
-            namespace,
+            "namespace",
             networkConfig,
             trackerConfig
         )
+        
+        // Comment out the above and uncomment this to use remote configuration
+//        // Make a remote config schema file, including your collector endpoint, and host it
+//        // Change this URL to point to the file
+//        val remoteConfig = RemoteConfiguration("http://192.168.0.10:8000/config.json", HttpMethod.GET)
+//        // Replace this backup endpoint with your own collector address
+//        val defaultConfig = listOf(ConfigurationBundle(
+//            "defaultNamespace", 
+//            NetworkConfiguration("http://192.168.0.10:9090", HttpMethod.POST))
+//        )
+//
+//        Snowplow.setup(
+//            LocalContext.current,
+//            remoteConfiguration = remoteConfig,
+//            defaultBundles = defaultConfig,
+//            onSuccess = {}
+//        )
+//        return Snowplow.defaultTracker
     }
 
     @Composable
