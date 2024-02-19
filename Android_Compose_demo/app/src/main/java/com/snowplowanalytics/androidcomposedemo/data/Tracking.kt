@@ -37,8 +37,9 @@ object Tracking {
         )
         
         // Comment out the above and uncomment this to use remote configuration
-//        // Make a remote config schema file, including your collector endpoint, and host it
-//        // Change this URL to point to the file
+//        // Copy the ExampleRemoteConfig.json file in this folder into somewhere you can host from
+//        // Update it with your collector endpoint
+//        // Change this URL to point to the hosted file
 //        val remoteConfig = RemoteConfiguration("http://192.168.0.10:8000/config.json", HttpMethod.GET)
 //        // Replace this backup endpoint with your own collector address
 //        val defaultConfig = listOf(ConfigurationBundle(

@@ -1,0 +1,32 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.mobile/remote_config/jsonschema/1-0-0",
+  "configurationVersion": 1,
+  "configurationBundle": [
+    {
+      "namespace": "namespace",
+      "networkConfiguration": {
+        "endpoint": "http://192.168.0.10:9090",
+        "method": "post"
+      },
+      "trackerConfiguration": {
+        "appId": "REMOTE-android-app",
+        "devicePlatform": "mob",
+        "logLevel": "debug",
+        "sessionContext": true,
+        "applicationContext": true,
+        "platformContext": true,
+        "geoLocationContext": true,
+        "screenContext": true,
+        "screenViewAutotracking": false,
+        "lifecycleAutotracking": true,
+        "installAutotracking": true,
+        "exceptionAutotracking": true
+      },
+      "subjectConfiguration": {},
+      "sessionConfiguration": {
+        "foregroundTimeout": 1000,
+        "backgroundTimeout": 1000
+      }
+    }
+  ]
+}
